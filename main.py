@@ -4,6 +4,5 @@ import numpy as np
 
 df = pd.read_csv('')
 
-print(df)
+df.head()
 
-# Hello, test ? test ?
