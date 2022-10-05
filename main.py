@@ -1,5 +1,5 @@
 import matplotlib
-import panda
-import numpy
+import panda as pd
+import numpy as np
 
 lol = "hehe"
