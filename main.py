@@ -14,7 +14,8 @@ df2 = df2.replace(np.NAN, 0)
 
 
 def trend_plot():
-    fig = px.line(df2, x='Date', y='Daily Confirmed', title='Trend of COVID19 Cases in Past Year')
+    fig = px.line(df2, x='Date', y='Daily Confirmed',
+                  title='Trend of COVID19 Cases in Past Year', markers=True)
     fig.show()
 
 
