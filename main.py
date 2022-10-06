@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 # Read excel file (Data last update: 2022-10-04)
 df = pd.read_excel('Covid-19 SG.xlsx')
@@ -13,9 +14,8 @@ df2 = df2.replace(np.NAN, 0)
 
 
 def trend_plot():
-    df2.plot('Date', 'Daily Confirmed', figsize=(25, 10),
-             title='Trend of COVID19 Cases in Past Year', grid=True)
-    plt.show()
+    fig = px.line(df2, x='Date', y='Daily Confirmed', title='Trend of COVID19 Cases in Past Year')
+    fig.show()
 
 
 print(trend_plot())
