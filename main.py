@@ -41,4 +41,5 @@ def stacked_linegraph():
                   color="Entity", title='Daily Confirmed COVID19 Cases by World Region')
     fig.show()
 
+
 # print(stacked_linegraph()) # uncomment to print graph
