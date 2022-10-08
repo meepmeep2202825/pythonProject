@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="line graph (updated)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="stacked line graph" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +119,28 @@
       <option name="project" value="LOCAL" />
       <updated>1665229512184</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="stacked line graph">
+      <created>1665242092599</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1665242092599</updated>
+    </task>
+    <task id="LOCAL-00013" summary="stacked line graph">
+      <created>1665242135821</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1665242135821</updated>
+    </task>
+    <task id="LOCAL-00014" summary="stacked line graph">
+      <created>1665242158750</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1665242158750</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,7 +187,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="line graph" />
     <MESSAGE value="line graph (updated)" />
-    <option name="LAST_COMMIT_MESSAGE" value="line graph (updated)" />
+    <MESSAGE value="stacked line graph" />
+    <option name="LAST_COMMIT_MESSAGE" value="stacked line graph" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
