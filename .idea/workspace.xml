@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="add data file">
+    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="cummulative bar graph">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -150,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665244267969</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="cummulative bar graph">
+      <created>1665309663203</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1665309663203</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,7 +206,8 @@
     <MESSAGE value="line graph (updated)" />
     <MESSAGE value="stacked line graph" />
     <MESSAGE value="add data file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add data file" />
+    <MESSAGE value="cummulative bar graph" />
+    <option name="LAST_COMMIT_MESSAGE" value="cummulative bar graph" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
