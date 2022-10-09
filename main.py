@@ -19,7 +19,7 @@ print(df2.head(5))
 
 def trend_plot():
     fig = px.line(df2, x='date', y='new_cases',
-                  title='Trend of COVID19 Cases in Past Year', markers=True)
+                  title='Trend of COVID19 Cases in Past Year (from 1 October 2021)', markers=True)
     fig.show()
 
 
@@ -38,7 +38,18 @@ df_region = df_region.loc[df_region['Entity'].isin(continents_list)]
 def stacked_linegraph():
     fig = px.area(df_region, x="Day", y="Daily new confirmed cases due to COVID-19 (rolling 7-day average, "
                                         "right-aligned)",
-                  color="Entity", title='Daily Confirmed COVID19 Cases by World Region')
+                  color="Entity", title='Daily Confirmed COVID19 Cases by World Region from 1 October 2021')
     fig.show()
 
 # print(stacked_linegraph()) # uncomment to print graph
+
+
+def cummulative_barGraph():
+    fig = px.bar(df, x='date', y='total_cases', color='total_cases', orientation='v',
+                 title='Total Confirmed Cases in Singapore from 1st October 2021',
+                 color_discrete_sequence=px.colors.cyclical.IceFire)
+    fig.show()
+
+
+print(cummulative_barGraph())
+
