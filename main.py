@@ -16,9 +16,6 @@ df2 = pd.DataFrame(data=df, columns=['date', 'new_cases'])  # filter out columns
 print(df2.head(5))
 
 
-# df2 = df2.replace(np.NAN, 0)
-
-
 def trend_plot():
     # Create figure with secondary y-axis
     fig = make_subplots(specs=[[{'secondary_y': True}]])
@@ -36,8 +33,8 @@ def trend_plot():
 
     fig.show()
 
+# print(trend_plot())  # uncomment to print graph
 
-# print(trend_plot_newCases())  # uncomment to print graph
 
 # Read csv file (Data last update: 2022-10-05)
 df_region = pd.read_csv('daily-cases-covid-region.csv')
@@ -58,13 +55,13 @@ def stacked_linegraph():
 # print(stacked_linegraph()) # uncomment to print graph
 
 
-def cummulative_barGraph():
+def cummulative_bar():
     fig = px.bar(df, x='date', y='total_cases', color='total_cases', orientation='v',
                  title='Total Confirmed Cases in Singapore from 1st October 2021',
                  color_discrete_sequence=px.colors.cyclical.IceFire)
     fig.show()
 
 
-# print(cummulative_barGraph())
+# print(cummulative_bar())
 
 
