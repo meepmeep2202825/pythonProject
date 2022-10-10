@@ -7,12 +7,15 @@ import plotly.graph_objects as go
 
 # Read excel file (Data last update: 2022-10-07)
 df = pd.read_csv('owid-covid-data.csv')
+df2 = pd.read_csv('owid-covid-data.csv')
 pd.set_option('display.max_columns', None)  # display all dataframe columns
 
 # Filter date to data of past 1 year
 df = df[df.date >= '2021-10-01']
 df = df[df.location == 'Singapore']
 
+df2 = df2[df2.date >= '2020-01-23']
+df2 = df2[df2.location == 'Singapore']
 
 
 def trend_plot():
@@ -63,17 +66,31 @@ def cummulative_bar():
 
 # print(cummulative_bar())
 
-df2 = pd.DataFrame(data=df[df.date >= '2020-12-30'], columns=['date', 'new_cases', 'total_vaccinations']) #filter out columns
-def downward_lineGraph():
+def downward_lineGraph():  # Daily covid cases line graph
     fig = make_subplots(specs=[[{"secondary_y": True}]])
-    fig.add_trace(go.Scatter(x=df2['date'], y=df2['new_cases'], name='New cases'), secondary_y=False,)
-    fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_vaccinations'], name='Total vaccinations'), secondary_y=True,)
-    fig.update_layout(title_text='Vaccine impact to covid cases')
+    fig.add_trace(go.Scatter(x=df2['date'], y=df2['new_cases'], name='New Covid-19 cases'), secondary_y=False,)
+    fig.add_trace(go.Scatter(x=df2['date'], y=df2['people_fully_vaccinated'], name='Daily vaccinations'),
+                  secondary_y=True,)
+    fig.update_layout(title_text='Vaccine impact to covid cases (Daily)')
     fig.update_xaxes(title_text="Date")
-    fig.update_yaxes(title_text="<b>primary</b> y axis title", secondary_y=False)
-    fig.update_yaxes(title_text="<b>secondary</b> yaxis title", secondary_y=True)
+    fig.update_yaxes(title_text="<b>Daily Covid-19 Cases</b>", secondary_y=False)
+    fig.update_yaxes(title_text="<b>Daily vaccinations</b>", secondary_y=True)
     fig.show()
 
 
-print(downward_lineGraph())
+# print(downward_lineGraph())  # uncomment to print graph
+
+def total_lineGraph():  # Total covid cases line graph
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
+    fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_cases'], name='Total Covid-19 cases'), secondary_y=False,)
+    fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_vaccinations'], name='Total vaccinations'),
+                  secondary_y=True,)
+    fig.update_layout(title_text='Vaccine impact to covid cases (Total)')
+    fig.update_xaxes(title_text="Date")
+    fig.update_yaxes(title_text="<b>Total Covid-19 Cases</b>", secondary_y=False)
+    fig.update_yaxes(title_text="<b>Total vaccinations</b>", secondary_y=True)
+    fig.show()
+
+
+# print(total_lineGraph()) # uncomment to print line graph
 
