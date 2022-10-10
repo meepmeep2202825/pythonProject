@@ -12,8 +12,7 @@ pd.set_option('display.max_columns', None)  # display all dataframe columns
 # Filter date to data of past 1 year
 df = df[df.date >= '2021-10-01']
 df = df[df.location == 'Singapore']
-df2 = pd.DataFrame(data=df, columns=['date', 'new_cases'])  # filter out columns
-print(df2.head(5))
+
 
 
 def trend_plot():
@@ -64,4 +63,17 @@ def cummulative_bar():
 
 # print(cummulative_bar())
 
+df2 = pd.DataFrame(data=df[df.date >= '2020-12-30'], columns=['date', 'new_cases', 'total_vaccinations']) #filter out columns
+def downward_lineGraph():
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
+    fig.add_trace(go.Scatter(x=df2['date'], y=df2['new_cases'], name='New cases'), secondary_y=False,)
+    fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_vaccinations'], name='Total vaccinations'), secondary_y=True,)
+    fig.update_layout(title_text='Vaccine impact to covid cases')
+    fig.update_xaxes(title_text="Date")
+    fig.update_yaxes(title_text="<b>primary</b> y axis title", secondary_y=False)
+    fig.update_yaxes(title_text="<b>secondary</b> yaxis title", secondary_y=True)
+    fig.show()
+
+
+print(downward_lineGraph())
 
