@@ -75,6 +75,5 @@ def downward_lineGraph():
     fig.update_yaxes(title_text="<b>secondary</b> Total No. of Vaccinations", secondary_y=True)
     fig.show()
 
-
-# print(downward_lineGraph())
+print(downward_lineGraph())
 
