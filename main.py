@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
 
 # Read excel file (Data last update: 2022-10-07)
 df = pd.read_csv('owid-covid-data.csv')
@@ -17,9 +19,21 @@ print(df2.head(5))
 # df2 = df2.replace(np.NAN, 0)
 
 
-def trend_plot_newCases():
-    fig = px.line(df2, x='date', y='new_cases',
-                  title='Trend of COVID19 Cases (Singapore) in Past Year (from 1 October 2021)', markers=True)
+def trend_plot():
+    # Create figure with secondary y-axis
+    fig = make_subplots(specs=[[{'secondary_y': True}]])
+    # Add traces
+    fig.add_trace(go.Scatter(x=df['date'], y=df['new_cases'], name='No. of New Cases'), secondary_y=False,)
+    fig.add_trace(go.Scatter(x=df['date'], y=df['new_deaths'], name='No. of New Deaths'), secondary_y=True,)
+
+    # Add figure title
+    fig.update_layout(title_text='No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2022')
+    # Set x-axis title
+    fig.update_xaxes(title_text='Date')
+    # Set y-axis titles
+    fig.update_yaxes(title_text='No. of New Cases', secondary_y=False)
+    fig.update_yaxes(title_text='No. of New Deaths', secondary_y=True)
+
     fig.show()
 
 
