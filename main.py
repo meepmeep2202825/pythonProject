@@ -19,7 +19,7 @@ print(df2.head(5))
 
 def trend_plot_newCases():
     fig = px.line(df2, x='date', y='new_cases',
-                  title='Trend of COVID19 Cases in Past Year (from 1 October 2021)', markers=True)
+                  title='Trend of COVID19 Cases (Singapore) in Past Year (from 1 October 2021)', markers=True)
     fig.show()
 
 
