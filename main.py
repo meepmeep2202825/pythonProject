@@ -17,13 +17,13 @@ print(df2.head(5))
 # df2 = df2.replace(np.NAN, 0)
 
 
-def trend_plot():
+def trend_plot_newCases():
     fig = px.line(df2, x='date', y='new_cases',
                   title='Trend of COVID19 Cases in Past Year (from 1 October 2021)', markers=True)
     fig.show()
 
 
-# print(trend_plot())  # uncomment to print graph
+# print(trend_plot_newCases())  # uncomment to print graph
 
 # Read csv file (Data last update: 2022-10-05)
 df_region = pd.read_csv('daily-cases-covid-region.csv')
@@ -51,6 +51,6 @@ def cummulative_barGraph():
     fig.show()
 
 
-print(cummulative_barGraph())
+# print(cummulative_barGraph())
 
 
