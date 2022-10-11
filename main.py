@@ -95,3 +95,25 @@ def total_lineGraph():  # Total covid cases line graph
 
 # print(total_lineGraph()) # uncomment to print line graph
 
+df2.index = pd.to_datetime(df2.date)
+df_mean = df2.groupby(pd.Grouper(freq="M")).mean(numeric_only=True)  # DataFrameGroupBy (grouped by Month)
+df_mean.reset_index(inplace=True) # Convert index (originally date) to df column
+df_mean = pd.DataFrame(data=df_mean, columns=['date', 'new_cases', 'stringency_index'])  # filter out columns
+
+
+def index_vs_cases():
+    fig = make_subplots(specs=[[{'secondary_y': True}]])
+    fig.add_trace(go.Bar(x=df_mean['date'], y=df_mean['stringency_index'], name='No. of New Cases (Monthly Average)'),
+                  secondary_y=False,)
+    fig.add_trace(go.Scatter(x=df_mean['date'], y=df_mean['stringency_index'], name='Stringency Index (Monthly Average)'
+                             , mode='markers + lines'),
+                  secondary_y=True,)
+    fig.update_layout(title_text='Effect of Stringency Index on No. of New COVID19 Cases')
+    fig.update_xaxes(title_text="Month")
+    fig.update_yaxes(title_text="<b>primary</b> No. of New Cases", secondary_y=False)
+    fig.update_yaxes(title_text="<b>secondary</b> Stringency Index", secondary_y=True)
+
+    fig.show()
+
+
+print(index_vs_cases())
