@@ -10,10 +10,11 @@ df = pd.read_csv('owid-covid-data.csv')
 df2 = pd.read_csv('owid-covid-data.csv')
 pd.set_option('display.max_columns', None)  # display all dataframe columns
 
-# Filter date to data of past 1 year
+# Filter date to data of past 1 year in Singapore
 df = df[df.date >= '2021-10-01']
 df = df[df.location == 'Singapore']
 
+# Filter date to data from day of 1st COVID19 case in Singapore
 df2 = df2[df2.date >= '2020-01-23']
 df2 = df2[df2.location == 'Singapore']
 

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="Impact of vaccine to covid cases (1)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
