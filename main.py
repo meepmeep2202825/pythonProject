@@ -5,7 +5,7 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
-# Read excel file (Data last update: 2022-10-07)
+# Read excel file
 df = pd.read_csv('owid-covid-data.csv')
 df2 = pd.read_csv('owid-covid-data.csv')
 pd.set_option('display.max_columns', None)  # display all dataframe columns
@@ -39,7 +39,7 @@ def trend_plot():
 # print(trend_plot())  # uncomment to print graph
 
 
-# Read csv file (Data last update: 2022-10-05)
+# Read csv file
 df_region = pd.read_csv('daily-cases-covid-region.csv')
 pd.set_option('display.max_columns', None)
 
