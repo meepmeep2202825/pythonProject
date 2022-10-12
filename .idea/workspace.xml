@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="Impact of vaccine to covid cases (2)">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2022_02_12_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2022_02_12_pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="stacked_line_deaths" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -221,14 +217,35 @@
       <option name="project" value="LOCAL" />
       <updated>1665382291697</updated>
     </task>
-    <task id="LOCAL-00022" summary="Impact of vaccine to covid cases (2)">
-      <created>1665410965401</created>
+    <task id="LOCAL-00022" summary="update">
+      <created>1665457887000</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1665410965401</updated>
+      <updated>1665457887000</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="mixed bar+line graph">
+      <created>1665507595621</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1665507595621</updated>
+    </task>
+    <task id="LOCAL-00024" summary="update">
+      <created>1665521209252</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1665521209252</updated>
+    </task>
+    <task id="LOCAL-00025" summary="stacked_line_deaths">
+      <created>1665521966555</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1665521966555</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,11 +295,12 @@
     <MESSAGE value="stacked line graph" />
     <MESSAGE value="add data file" />
     <MESSAGE value="cummulative bar graph" />
-    <MESSAGE value="update" />
     <MESSAGE value="trend_linegraph" />
     <MESSAGE value="Impact of vaccine to covid cases (1)" />
-    <MESSAGE value="Impact of vaccine to covid cases (2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Impact of vaccine to covid cases (2)" />
+    <MESSAGE value="mixed bar+line graph" />
+    <MESSAGE value="update" />
+    <MESSAGE value="stacked_line_deaths" />
+    <option name="LAST_COMMIT_MESSAGE" value="stacked_line_deaths" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
