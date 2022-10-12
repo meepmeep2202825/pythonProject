@@ -1,11 +1,12 @@
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
+from tkinter import *
+from PIL import ImageTk, Image
 
-# Read excel file
+
+# Read Excel file
 df = pd.read_csv('owid-covid-data.csv')
 df2 = pd.read_csv('owid-covid-data.csv')
 pd.set_option('display.max_columns', None)  # display all dataframe columns
@@ -37,9 +38,6 @@ def trend_plot():
     fig.show()
 
 
-# print(trend_plot())  # uncomment to print graph
-
-
 # Read csv file
 df_region = pd.read_csv('daily-cases-covid-region.csv')
 pd.set_option('display.max_columns', None)
@@ -50,14 +48,12 @@ continents_list = ['North America', 'South America', 'Europe', 'Africa', 'Asia e
 df_region = df_region.loc[df_region['Entity'].isin(continents_list)]
 
 
-def stacked_linegraph():
+def stacked_linegraph():  # Daily Confirmed COVID19 Cases by World Region from 1 October 2021
     fig = px.area(df_region, x="Day", y="Daily new confirmed cases due to COVID-19 (rolling 7-day average, "
                                         "right-aligned)",
                   color="Entity", title='Daily Confirmed COVID19 Cases by World Region from 1 October 2021')
     fig.show()
 
-
-# print(stacked_linegraph()) # uncomment to print graph
 
 # Read csv data
 df_region_deaths = pd.read_csv('daily-covid-deaths-region.csv')
@@ -68,26 +64,21 @@ df_region_deaths = df_region_deaths[df_region_deaths.Day >= '2021-10-01']
 df_region_deaths = df_region_deaths.loc[df_region_deaths['Entity'].isin(continents_list)]
 
 
-def stacked_linegraph_deaths():
+def stacked_linegraph_deaths():  # Daily Confirmed COVID19 Deaths by World Region from 1 October 2021
     fig = px.area(df_region_deaths, x="Day",
                   y="Daily new confirmed deaths due to COVID-19 (rolling 7-day average, right-aligned)",
                   color="Entity", title='Daily Confirmed COVID19 Deaths by World Region from 1 October 2021')
     fig.show()
 
 
-print(stacked_linegraph_deaths())
-
-
-def cummulative_bar():
+def cumulative_bar():  # Total Confirmed Cases in Singapore from 1st October 2011
     fig = px.bar(df, x='date', y='total_cases', color='total_cases', orientation='v',
                  title='Total Confirmed Cases in Singapore from 1st October 2021',
                  color_discrete_sequence=px.colors.cyclical.IceFire)
     fig.show()
 
 
-# print(cummulative_bar())
-
-def downward_lineGraph():  # Daily covid cases line graph
+def downward_lineGraph():  # Daily vaccine impact to covid cases line graph
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['new_cases'], name='New Covid-19 cases'), secondary_y=False, )
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['people_fully_vaccinated'], name='Daily vaccinations'),
@@ -99,9 +90,7 @@ def downward_lineGraph():  # Daily covid cases line graph
     fig.show()
 
 
-# print(downward_lineGraph())  # uncomment to print graph
-
-def total_lineGraph():  # Total covid cases line graph
+def total_lineGraph():  # Vaccine impact to covid cases (Total)
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_cases'], name='Total Covid-19 cases'), secondary_y=False, )
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_vaccinations'], name='Total vaccinations'),
@@ -113,8 +102,6 @@ def total_lineGraph():  # Total covid cases line graph
     fig.show()
 
 
-# print(total_lineGraph()) # uncomment to print line graph
-
 df2.index = pd.to_datetime(df2.date)
 df_mean = df2.groupby(pd.Grouper(freq="M")).mean(numeric_only=True)  # DataFrameGroupBy (grouped by Month)
 df_mean.reset_index(inplace=True)  # Convert index (originally date) to df column
@@ -125,9 +112,9 @@ def index_vs_cases():
     fig = make_subplots(specs=[[{'secondary_y': True}]])
     fig.add_trace(go.Bar(x=df_mean['date'], y=df_mean['stringency_index'], name='No. of New Cases (Monthly Average)'),
                   secondary_y=False, )
-    fig.add_trace(go.Scatter(x=df_mean['date'], y=df_mean['stringency_index'], name='Stringency Index (Monthly Average)'
-                             , mode='markers + lines'),
-                  secondary_y=True, )
+    fig.add_trace(go.Scatter(x=df_mean['date'], y=df_mean['stringency_index'],
+                             name='Stringency Index (Monthly Average)',
+                             mode='markers + lines'), secondary_y=True, )
     fig.update_layout(title_text='Effect of Stringency Index on No. of New COVID19 Cases')
     fig.update_xaxes(title_text="Month")
     fig.update_yaxes(title_text="<b>primary</b> No. of New Cases", secondary_y=False)
@@ -136,4 +123,59 @@ def index_vs_cases():
     fig.show()
 
 
-print(index_vs_cases())
+# ADVANCED Graphical User Interface (GUI)
+window = Tk()
+window.geometry('1024x686')  # Setting the dimension for the window popup
+window.title('Covid 19 Analysis')  # Setting the title for the window popup
+
+# Creating a canvas for the background image
+my_canvas = Canvas(window, width=1024, height=686, bg="white")
+my_canvas.grid(row=0, column=0)
+img = ImageTk.PhotoImage(Image.open("blue_skies.jpg"))  # PIL Solution
+my_canvas.create_image(0, 0, anchor=NW, image=img)
+
+my_label = Label(window, image=img)
+my_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+# Setting the header
+greetings = Label(window, text="Welcome! What would you like to view today?",
+                  font=("Helvetica", 20), bg="black", fg="white")
+greetings.place(x=200, y=100, width=600, height=50)
+
+# No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2022 button
+button_trend = Button(window, text='No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2022',
+                      command=trend_plot)
+button_trend.place(x=20, y=200, width=450, height=20)
+
+# Total confirmed cases in Singapore from 1st October 2021 button
+button_total = Button(window, text='Total Confirmed Cases in Singapore from 1st October 2021',
+                      command=cumulative_bar)
+button_total.place(x=550, y=200, width=400, height=20)
+
+# Daily Confirmed COVID19 Cases by World Region from 1 October 2021 button
+button_stacked = Button(window, text='Daily Confirmed COVID19 Cases by World Region from 1 October 2021',
+                        command=stacked_linegraph)
+button_stacked.place(x=20, y=300, width=450, height=20)
+
+# Daily Confirmed COVID19 Deaths by World Region from 1 October 2021 button
+button_stacked_death = Button(window, text='Daily Confirmed COVID19 Deaths by World Region from 1 October 2021',
+                              command=stacked_linegraph_deaths)
+button_stacked_death.place(x=550, y=300, width=400, height=20)
+
+# Vaccine impact on Covid Cases (Total) button
+button_total_vaccine = Button(window, text='Vaccine impact on Covid-19 Cases (Total)', command=total_lineGraph)
+button_total_vaccine.place(x=20, y=400, width=450, height=20)
+
+# Vaccine impact on Covid-19 Cases (Daily)
+button_daily = Button(window, text='Vaccine impact on Covid-19 Cases (Daily)', command=downward_lineGraph)
+button_daily.place(x=550, y=400, width=400, height=20)
+
+
+# Effect of Stringency Index on No. of New COVID19 Cases button
+button_effect = Button(window, text='Effect of Stringency Index on No. of New COVID19 Cases',
+                       command=index_vs_cases)
+button_effect.place(x=300, y=500, width=400, height=20)
+
+
+# Run the tkinter loop
+window.mainloop()
