@@ -5,6 +5,12 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
+import tkinter as tk
+from tkinter import *
+from tkinter import messagebox
+import threading
+
+
 # Read excel file (Data last update: 2022-10-07)
 df = pd.read_csv('owid-covid-data.csv')
 df2 = pd.read_csv('owid-covid-data.csv')
@@ -26,7 +32,7 @@ def trend_plot():
     fig.add_trace(go.Scatter(x=df['date'], y=df['new_deaths'], name='No. of New Deaths'), secondary_y=True,)
 
     # Add figure title
-    fig.update_layout(title_text='No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2022')
+    fig.update_layout(title_text='No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2021')
     # Set x-axis title
     fig.update_xaxes(title_text='Date')
     # Set y-axis titles
@@ -66,7 +72,7 @@ def cummulative_bar():
 
 # print(cummulative_bar())
 
-def downward_lineGraph():  # Daily covid cases line graph
+def daily_lineGraph():  # Daily covid cases line graph
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['new_cases'], name='New Covid-19 cases'), secondary_y=False,)
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['people_fully_vaccinated'], name='Daily vaccinations'),
@@ -78,7 +84,7 @@ def downward_lineGraph():  # Daily covid cases line graph
     fig.show()
 
 
-# print(downward_lineGraph())  # uncomment to print graph
+# print(daily_lineGraph())  # uncomment to print graph
 
 def total_lineGraph():  # Total covid cases line graph
     fig = make_subplots(specs=[[{"secondary_y": True}]])
@@ -93,4 +99,42 @@ def total_lineGraph():  # Total covid cases line graph
 
 
 # print(total_lineGraph()) # uncomment to print line graph
+
+window = Tk()
+window.geometry('400x150')
+window.title('Covid 19 Analysis')
+
+# No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2022
+buttontrend = Button(window, text='No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2022',
+                     command=trend_plot)
+buttontrend.pack()
+
+# Total confirmed cases in Singapore from 1st October 2021
+buttoncummulative = Button(window, text='Total Confirmed Cases in Singapore from 1st October 2021',
+                           command=cummulative_bar)
+buttoncummulative.pack()
+
+# Daily Confirmed COVID19 Cases by World Region from 1 October 2021
+buttonstacked = Button(window, text='Daily Confirmed COVID19 Cases by World Region from 1 October 2021',
+                       command=stacked_linegraph)
+buttonstacked.pack()
+
+# Total covid cases line graph
+buttontotal = Button(window, text='Total Covid Cases line graph', command=total_lineGraph)
+buttontotal.pack()
+
+# Daily covid cases line graph
+buttondaily = Button(window, text='Daily Covid Cases line graph', command=daily_lineGraph)
+buttondaily.pack()
+
+
+window.mainloop()
+
+
+
+
+
+
+
+
 
