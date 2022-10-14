@@ -15,8 +15,8 @@ pd.set_option('display.max_columns', None)  # display all dataframe columns
 df.drop(
     ['iso_code', 'continent', 'new_cases_smoothed', 'total_deaths', 'new_deaths_smoothed', 'total_cases_per_million',
      'new_cases_per_million', 'new_cases_smoothed_per_million', 'total_deaths_per_million',
-     'new_deaths_per_million', 'new_deaths_smoothed_per_million', 'reproduction_rate', 'icu_patients', 'icu_patients_per_million',
-     'hosp_patients', 'hosp_patients_per_million',
+     'new_deaths_per_million', 'new_deaths_smoothed_per_million', 'reproduction_rate', 'icu_patients',
+     'icu_patients_per_million', 'hosp_patients', 'hosp_patients_per_million',
      'weekly_icu_admissions', 'weekly_icu_admissions_per_million',
      'weekly_hosp_admissions', 'weekly_hosp_admissions_per_million', 'total_tests', 'new_tests',
      'total_tests_per_thousand', 'new_tests_per_thousand', 'new_tests_smoothed', 'new_tests_smoothed_per_thousand',
@@ -34,8 +34,8 @@ df.drop(
 df2.drop(
     ['iso_code', 'continent', 'new_cases_smoothed', 'total_deaths', 'new_deaths_smoothed', 'total_cases_per_million',
      'new_cases_per_million', 'new_cases_smoothed_per_million', 'total_deaths_per_million',
-     'new_deaths_per_million', 'new_deaths_smoothed_per_million', 'reproduction_rate', 'icu_patients', 'icu_patients_per_million',
-     'hosp_patients', 'hosp_patients_per_million',
+     'new_deaths_per_million', 'new_deaths_smoothed_per_million', 'reproduction_rate', 'icu_patients',
+     'icu_patients_per_million', 'hosp_patients', 'hosp_patients_per_million',
      'weekly_icu_admissions', 'weekly_icu_admissions_per_million',
      'weekly_hosp_admissions', 'weekly_hosp_admissions_per_million', 'total_tests', 'new_tests',
      'total_tests_per_thousand', 'new_tests_per_thousand', 'new_tests_smoothed', 'new_tests_smoothed_per_thousand',
@@ -117,7 +117,7 @@ def cumulative_bar():  # Total Confirmed Cases in Singapore from 19 August 2011
     fig.show()
 
 
-def downward_lineGraph():  # Daily vaccine impact to covid cases line graph
+def downward_linegraph():  # Daily vaccine impact to covid cases line graph
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['new_cases'], name='New Covid-19 cases'), secondary_y=False, )
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['people_fully_vaccinated'], name='Daily vaccinations'),
@@ -129,7 +129,7 @@ def downward_lineGraph():  # Daily vaccine impact to covid cases line graph
     fig.show()
 
 
-def total_lineGraph():  # Vaccine impact to covid cases (Total)
+def total_linegraph():  # Vaccine impact to covid cases (Total)
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_cases'], name='Total Covid-19 cases'), secondary_y=False, )
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_vaccinations'], name='Total vaccinations'),
@@ -149,7 +149,7 @@ df_mean = pd.DataFrame(data=df_mean, columns=['date', 'new_cases', 'stringency_i
 
 def index_vs_cases():
     fig = make_subplots(specs=[[{'secondary_y': True}]])
-    fig.add_trace(go.Bar(x=df_mean['date'], y=df_mean['stringency_index'], name='No. of New Cases (Monthly Average)'),
+    fig.add_trace(go.Bar(x=df_mean['date'], y=df_mean['new_cases'], name='No. of New Cases (Monthly Average)'),
                   secondary_y=False, )
     fig.add_trace(go.Scatter(x=df_mean['date'], y=df_mean['stringency_index'],
                              name='Stringency Index (Monthly Average)',
@@ -202,11 +202,11 @@ button_stacked_death = Button(window, text='Daily Confirmed Covid-19 Deaths by W
 button_stacked_death.place(x=550, y=300, width=400, height=20)
 
 # Vaccine impact on Covid-19 Cases (Total) button
-button_total_vaccine = Button(window, text='Vaccine impact on Covid-19 Cases (Total)', command=total_lineGraph)
+button_total_vaccine = Button(window, text='Vaccine impact on Covid-19 Cases (Total)', command=total_linegraph)
 button_total_vaccine.place(x=20, y=400, width=450, height=20)
 
 # Vaccine impact on Covid-19 Cases (Daily)
-button_daily = Button(window, text='Vaccine impact on Covid-19 Cases (Daily)', command=downward_lineGraph)
+button_daily = Button(window, text='Vaccine impact on Covid-19 Cases (Daily)', command=downward_linegraph)
 button_daily.place(x=550, y=400, width=400, height=20)
 
 
