@@ -149,7 +149,7 @@ df_mean = pd.DataFrame(data=df_mean, columns=['date', 'new_cases', 'stringency_i
 
 def index_vs_cases():
     fig = make_subplots(specs=[[{'secondary_y': True}]])
-    fig.add_trace(go.Bar(x=df_mean['date'], y=df_mean['stringency_index'], name='No. of New Cases (Monthly Average)'),
+    fig.add_trace(go.Bar(x=df_mean['date'], y=df_mean['new_cases'], name='No. of New Cases (Monthly Average)'),
                   secondary_y=False, )
     fig.add_trace(go.Scatter(x=df_mean['date'], y=df_mean['stringency_index'],
                              name='Stringency Index (Monthly Average)',
