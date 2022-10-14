@@ -31,7 +31,6 @@ df.drop(
      'excess_mortality_cumulative', 'excess_mortality', 'excess_mortality_cumulative_per_million'],
     axis='columns', inplace=True)
 
-
 df2.drop(
     ['iso_code', 'continent', 'new_cases_smoothed', 'total_deaths', 'new_deaths_smoothed', 'total_cases_per_million',
      'new_cases_per_million', 'new_cases_smoothed_per_million', 'total_deaths_per_million',
@@ -51,11 +50,11 @@ df2.drop(
      'excess_mortality_cumulative', 'excess_mortality', 'excess_mortality_cumulative_per_million'],
     axis='columns', inplace=True)
 
-# Filter date to data of past 1 year in Singapore
-df = df[df.date >= '2021-10-01']
+# Filter date to data from 19 August 2021 in Singapore (Measures eased)
+df = df[df.date >= '2021-08-19']
 df = df[df.location == 'Singapore']
 
-# Filter date to data from day of 1st COVID19 case in Singapore
+# Filter date to data from day of 1st Covid-19 case in Singapore
 df2 = df2[df2.date >= '2020-01-23']
 df2 = df2[df2.location == 'Singapore']
 
@@ -68,7 +67,7 @@ def trend_plot():
     fig.add_trace(go.Scatter(x=df['date'], y=df['new_deaths'], name='No. of New Deaths'), secondary_y=True, )
 
     # Add figure title
-    fig.update_layout(title_text='No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2022')
+    fig.update_layout(title_text='No. of New Cases VS. No. of New Deaths in Singapore from 19 August 2021')
     # Set x-axis title
     fig.update_xaxes(title_text='Date')
     # Set y-axis titles
@@ -82,16 +81,16 @@ def trend_plot():
 df_region = pd.read_csv('daily-cases-covid-region.csv')
 pd.set_option('display.max_columns', None)
 
-# Filter date to data of past 1 year
-df_region = df_region[df_region.Day >= '2021-10-01']
+# Filter date to data from 19 August 2021 (SG measures eased)
+df_region = df_region[df_region.Day >= '2021-08-19']
 continents_list = ['North America', 'South America', 'Europe', 'Africa', 'Asia excl. China', 'China', 'Oceania']
 df_region = df_region.loc[df_region['Entity'].isin(continents_list)]
 
 
-def stacked_linegraph():  # Daily Confirmed COVID19 Cases by World Region from 1 October 2021
+def stacked_linegraph():  # Daily Confirmed Covid-19 Cases by World Region from 19 August 2021
     fig = px.area(df_region, x="Day", y="Daily new confirmed cases due to COVID-19 (rolling 7-day average, "
                                         "right-aligned)",
-                  color="Entity", title='Daily Confirmed COVID19 Cases by World Region from 1 October 2021')
+                  color="Entity", title='Daily Confirmed Covid-19 Cases by World Region from 19 August 2021')
     fig.show()
 
 
@@ -99,21 +98,21 @@ def stacked_linegraph():  # Daily Confirmed COVID19 Cases by World Region from 1
 df_region_deaths = pd.read_csv('daily-covid-deaths-region.csv')
 pd.set_option('display.max_columns', None)
 
-# Filter date to data of past 1 year
-df_region_deaths = df_region_deaths[df_region_deaths.Day >= '2021-10-01']
+# Filter date to data from 19 August 2021 (SG measures eased)
+df_region_deaths = df_region_deaths[df_region_deaths.Day >= '2021-08-19']
 df_region_deaths = df_region_deaths.loc[df_region_deaths['Entity'].isin(continents_list)]
 
 
-def stacked_linegraph_deaths():  # Daily Confirmed COVID19 Deaths by World Region from 1 October 2021
+def stacked_linegraph_deaths():  # Daily Confirmed Covid-19 Deaths by World Region from 19 August 2021
     fig = px.area(df_region_deaths, x="Day",
                   y="Daily new confirmed deaths due to COVID-19 (rolling 7-day average, right-aligned)",
-                  color="Entity", title='Daily Confirmed COVID19 Deaths by World Region from 1 October 2021')
+                  color="Entity", title='Daily Confirmed Covid-19 Deaths by World Region from 19 August 2021')
     fig.show()
 
 
-def cumulative_bar():  # Total Confirmed Cases in Singapore from 1st October 2011
+def cumulative_bar():  # Total Confirmed Cases in Singapore from 19 August 2011
     fig = px.bar(df, x='date', y='total_cases', color='total_cases', orientation='v',
-                 title='Total Confirmed Cases in Singapore from 1st October 2021',
+                 title='Total Confirmed Cases in Singapore from 19 August 2021',
                  color_discrete_sequence=px.colors.cyclical.IceFire)
     fig.show()
 
@@ -135,7 +134,7 @@ def total_lineGraph():  # Vaccine impact to covid cases (Total)
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_cases'], name='Total Covid-19 cases'), secondary_y=False, )
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_vaccinations'], name='Total vaccinations'),
                   secondary_y=True, )
-    fig.update_layout(title_text='Vaccine impact to covid cases (Total)')
+    fig.update_layout(title_text='Vaccine impact to Covid-19 cases (Total)')
     fig.update_xaxes(title_text="Date")
     fig.update_yaxes(title_text="<b>Total Covid-19 Cases</b>", secondary_y=False)
     fig.update_yaxes(title_text="<b>Total vaccinations</b>", secondary_y=True)
@@ -155,10 +154,10 @@ def index_vs_cases():
     fig.add_trace(go.Scatter(x=df_mean['date'], y=df_mean['stringency_index'],
                              name='Stringency Index (Monthly Average)',
                              mode='markers + lines'), secondary_y=True, )
-    fig.update_layout(title_text='Effect of Stringency Index on No. of New COVID19 Cases')
+    fig.update_layout(title_text='Effect of Stringency Index on No. of New Covid-19 Cases')
     fig.update_xaxes(title_text="Month")
-    fig.update_yaxes(title_text="<b>primary</b> No. of New Cases", secondary_y=False)
-    fig.update_yaxes(title_text="<b>secondary</b> Stringency Index", secondary_y=True)
+    fig.update_yaxes(title_text="<b>No. of New Cases</b>", secondary_y=False)
+    fig.update_yaxes(title_text="<b>Stringency Index</b>", secondary_y=True)
 
     fig.show()
 
@@ -166,7 +165,7 @@ def index_vs_cases():
 # ADVANCED Graphical User Interface (GUI)
 window = Tk()
 window.geometry('1024x686')  # Setting the dimension for the window popup
-window.title('Covid 19 Analysis')  # Setting the title for the window popup
+window.title('Covid-19 Analysis')  # Setting the title for the window popup
 
 # Creating a canvas for the background image
 my_canvas = Canvas(window, width=1024, height=686, bg="white")
@@ -182,27 +181,27 @@ greetings = Label(window, text="Welcome! What would you like to view today?",
                   font=("Helvetica", 20), bg="black", fg="white")
 greetings.place(x=200, y=100, width=600, height=50)
 
-# No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2022 button
-button_trend = Button(window, text='No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2021',
+# No. of New Cases VS. No. of New Deaths in Singapore from 19 August 2022 button
+button_trend = Button(window, text='No. of New Cases VS. No. of New Deaths in Singapore from 19 August 2021',
                       command=trend_plot)
 button_trend.place(x=20, y=200, width=450, height=20)
 
-# Total confirmed cases in Singapore from 19th August 2021 button
+# Total confirmed cases in Singapore from 19 August 2021 button
 button_total = Button(window, text='Total Confirmed Cases in Singapore from 19 August 2021',
                       command=cumulative_bar)
 button_total.place(x=550, y=200, width=400, height=20)
 
-# Daily Confirmed COVID19 Cases by World Region from 19 August 2021 button
-button_stacked = Button(window, text='Daily Confirmed COVID19 Cases by World Region from 19 August 2021',
+# Daily Confirmed Covid-19 Cases by World Region from 19 August 2021 button
+button_stacked = Button(window, text='Daily Confirmed Covid-19 Cases by World Region from 19 August 2021',
                         command=stacked_linegraph)
 button_stacked.place(x=20, y=300, width=450, height=20)
 
-# Daily Confirmed COVID19 Deaths by World Region from 19 August 2021 button
-button_stacked_death = Button(window, text='Daily Confirmed COVID19 Deaths by World Region from 19 August 2021',
+# Daily Confirmed Covid-19 Deaths by World Region from 19 August 2021 button
+button_stacked_death = Button(window, text='Daily Confirmed Covid-19 Deaths by World Region from 19 August 2021',
                               command=stacked_linegraph_deaths)
 button_stacked_death.place(x=550, y=300, width=400, height=20)
 
-# Vaccine impact on Covid Cases (Total) button from 1 O
+# Vaccine impact on Covid-19 Cases (Total) button
 button_total_vaccine = Button(window, text='Vaccine impact on Covid-19 Cases (Total)', command=total_lineGraph)
 button_total_vaccine.place(x=20, y=400, width=450, height=20)
 
@@ -211,8 +210,8 @@ button_daily = Button(window, text='Vaccine impact on Covid-19 Cases (Daily)', c
 button_daily.place(x=550, y=400, width=400, height=20)
 
 
-# Effect of Stringency Index on No. of New COVID19 Cases button
-button_effect = Button(window, text='Effect of Stringency Index on No. of New COVID19 Cases',
+# Effect of Stringency Index on No. of New Covid-19 Cases button
+button_effect = Button(window, text='Effect of Stringency Index on No. of New Covid-19 Cases',
                        command=index_vs_cases)
 button_effect.place(x=300, y=500, width=400, height=20)
 
