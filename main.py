@@ -183,7 +183,7 @@ greetings = Label(window, text="Welcome! What would you like to view today?",
 greetings.place(x=200, y=100, width=600, height=50)
 
 # No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2022 button
-button_trend = Button(window, text='No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2022',
+button_trend = Button(window, text='No. of New Cases VS. No. of New Deaths in Singapore from 1 October 2021',
                       command=trend_plot)
 button_trend.place(x=20, y=200, width=450, height=20)
 
@@ -202,11 +202,11 @@ button_stacked_death = Button(window, text='Daily Confirmed COVID19 Deaths by Wo
                               command=stacked_linegraph_deaths)
 button_stacked_death.place(x=550, y=300, width=400, height=20)
 
-# Vaccine impact on Covid Cases (Total) button from 1 October 2021
+# Vaccine impact on Covid Cases (Total) button from 1 O
 button_total_vaccine = Button(window, text='Vaccine impact on Covid-19 Cases (Total)', command=total_lineGraph)
 button_total_vaccine.place(x=20, y=400, width=450, height=20)
 
-# Vaccine impact on Covid-19 Cases (Daily) button from 1 October 2021
+# Vaccine impact on Covid-19 Cases (Daily)
 button_daily = Button(window, text='Vaccine impact on Covid-19 Cases (Daily)', command=downward_lineGraph)
 button_daily.place(x=550, y=400, width=400, height=20)
 
