@@ -1,0 +1,140 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm__Changes_.xml	(revision ac7dbaffe905423f198eed2b8ec19e395e29a8e4)
++++ /dev/null	(revision ac7dbaffe905423f198eed2b8ec19e395e29a8e4)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm_[Changes]" date="1665050413395" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 06/10/2022 06:00 pm [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm_[Changes]/shelved.patch	(revision ac7dbaffe905423f198eed2b8ec19e395e29a8e4)
++++ /dev/null	(revision ac7dbaffe905423f198eed2b8ec19e395e29a8e4)
+@@ -1,72 +0,0 @@
+-Index: main.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import matplotlib\r\nimport panda as pd\r\nimport numpy as np\r\n\r\nlol = \"hehe\"\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/main.py b/main.py
+---- a/main.py	(revision e7de906f31d14be497437a58c2a74da8418aec22)
+-+++ b/main.py	(date 1665050353760)
+-@@ -1,5 +1,5 @@
+- import matplotlib
+--import panda as pd
+-+import pandas as pd
+- import numpy as np
+- 
+- lol = "hehe"
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ae9454bf-6dd6-440f-953c-4bf8e37898b1\" name=\"Changes\" comment=\"chunwei's testing\">\r\n      <change beforePath=\"$PROJECT_DIR$/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/main.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Fi1sUnkl2ZPN4KXK5UXF5enTWO\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ae9454bf-6dd6-440f-953c-4bf8e37898b1\" name=\"Changes\" comment=\"\" />\r\n      <created>1664960297153</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1664960297153</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"chunwei's committing\">\r\n      <created>1664961303766</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664961303766</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"chunwei's testing\">\r\n      <created>1664961711711</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664961711711</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"chunwei's testing\">\r\n      <created>1664963442939</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664963442939</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"chunwei's testing\">\r\n      <created>1664963453764</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664963453764</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"chun_wei\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"Branch\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"chun_wei\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"chunwei's committing\" />\r\n    <MESSAGE value=\"chunwei's testing\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"chunwei's testing\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision e7de906f31d14be497437a58c2a74da8418aec22)
+-+++ b/.idea/workspace.xml	(date 1664964484931)
+-@@ -1,8 +1,8 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+-   <component name="ChangeListManager">
+--    <list default="true" id="ae9454bf-6dd6-440f-953c-4bf8e37898b1" name="Changes" comment="chunwei's testing">
+--      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+-+    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="test">
+-+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -21,6 +21,7 @@
+-     <option name="stateVersion" value="1" />
+-   </component>
+-   <component name="ProjectId" id="2Fi1sUnkl2ZPN4KXK5UXF5enTWO" />
+-+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+-   <component name="ProjectViewState">
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-@@ -69,7 +70,14 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1664963453764</updated>
+-     </task>
+--    <option name="localTasksCounter" value="5" />
+-+    <task id="LOCAL-00005" summary="test">
+-+      <created>1664964023740</created>
+-+      <option name="number" value="00005" />
+-+      <option name="presentableId" value="LOCAL-00005" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1664964023740</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="6" />
+-     <servers />
+-   </component>
+-   <component name="Vcs.Log.Tabs.Properties">
+-@@ -113,6 +121,7 @@
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="chunwei's committing" />
+-     <MESSAGE value="chunwei's testing" />
+--    <option name="LAST_COMMIT_MESSAGE" value="chunwei's testing" />
+-+    <MESSAGE value="test" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="test" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dd6639d-0386-4614-aab3-0640eca38ca1\" name=\"Changes\" comment=\"file update\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm_[Changes]/shelved.patch\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm__Changes_.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/main.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Fi1sUnkl2ZPN4KXK5UXF5enTWO\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/siahl/Desktop/Li Ling/pythonProject13/main.py&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;http.certificates&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"pythonProject\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dd6639d-0386-4614-aab3-0640eca38ca1\" name=\"Changes\" comment=\"test\" />\r\n      <created>1664960297153</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1664960297153</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"chunwei's committing\">\r\n      <created>1664961303766</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664961303766</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"chunwei's testing\">\r\n      <created>1664961711711</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664961711711</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"chunwei's testing\">\r\n      <created>1664963442939</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664963442939</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"chunwei's testing\">\r\n      <created>1664963453764</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664963453764</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"test\">\r\n      <created>1664964023740</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664964023740</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"line graph\">\r\n      <created>1665070808475</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665070808475</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"line graph\">\r\n      <created>1665070862447</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665070862447</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"line graph (updated)\">\r\n      <created>1665079784571</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665079784571</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"line graph (updated)\">\r\n      <created>1665079919826</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665079919826</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"line graph (updated)\">\r\n      <created>1665229492423</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665229492423</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"line graph (updated)\">\r\n      <created>1665229512184</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665229512184</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"stacked line graph\">\r\n      <created>1665242092599</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665242092599</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"stacked line graph\">\r\n      <created>1665242135821</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665242135821</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"stacked line graph\">\r\n      <created>1665242158750</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665242158750</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"add data file\">\r\n      <created>1665244267969</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665244267969</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"cummulative bar graph\">\r\n      <created>1665309663203</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665309663203</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"cummulative bar graph\">\r\n      <created>1665318216533</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665318216533</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"update\">\r\n      <created>1665374278699</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665374278699</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"update\">\r\n      <created>1665374368687</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665374368687</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"trend_linegraph\">\r\n      <created>1665379768107</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665379768107</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"Impact of vaccine to covid cases (1)\">\r\n      <created>1665382291697</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665382291697</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"update\">\r\n      <created>1665457887000</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665457887000</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"mixed bar+line graph\">\r\n      <created>1665507595621</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665507595621</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00024\" summary=\"update\">\r\n      <created>1665521209252</created>\r\n      <option name=\"number\" value=\"00024\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665521209252</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00025\" summary=\"stacked_line_deaths\">\r\n      <created>1665521966555</created>\r\n      <option name=\"number\" value=\"00025\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665521966555</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00026\" summary=\"file update\">\r\n      <created>1665585419911</created>\r\n      <option name=\"number\" value=\"00026\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00026\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665585419911</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"27\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"chun_wei\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"Branch\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"chun_wei\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"chunwei's committing\" />\r\n    <MESSAGE value=\"chunwei's testing\" />\r\n    <MESSAGE value=\"test\" />\r\n    <MESSAGE value=\"line graph\" />\r\n    <MESSAGE value=\"line graph (updated)\" />\r\n    <MESSAGE value=\"stacked line graph\" />\r\n    <MESSAGE value=\"add data file\" />\r\n    <MESSAGE value=\"cummulative bar graph\" />\r\n    <MESSAGE value=\"trend_linegraph\" />\r\n    <MESSAGE value=\"Impact of vaccine to covid cases (1)\" />\r\n    <MESSAGE value=\"mixed bar+line graph\" />\r\n    <MESSAGE value=\"update\" />\r\n    <MESSAGE value=\"stacked_line_deaths\" />\r\n    <MESSAGE value=\"file update\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"file update\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\r\n          <url>file://$PROJECT_DIR$/../PYProject/main.py</url>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision ac7dbaffe905423f198eed2b8ec19e395e29a8e4)
++++ b/.idea/workspace.xml	(date 1665725615113)
+@@ -1,11 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="file update">
++    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="update date">
+       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm_[Changes]/shelved.patch" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm__Changes_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -257,7 +256,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1665585419911</updated>
+     </task>
+-    <option name="localTasksCounter" value="27" />
++    <task id="LOCAL-00027" summary="update date">
++      <created>1665725139837</created>
++      <option name="number" value="00027" />
++      <option name="presentableId" value="LOCAL-00027" />
++      <option name="project" value="LOCAL" />
++      <updated>1665725139837</updated>
++    </task>
++    <option name="localTasksCounter" value="28" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -313,7 +319,8 @@
+     <MESSAGE value="update" />
+     <MESSAGE value="stacked_line_deaths" />
+     <MESSAGE value="file update" />
+-    <option name="LAST_COMMIT_MESSAGE" value="file update" />
++    <MESSAGE value="update date" />
++    <option name="LAST_COMMIT_MESSAGE" value="update date" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
