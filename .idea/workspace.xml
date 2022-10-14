@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="changing dates">
+    <list default="true" id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="drop unused columns">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2022_1_36_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2022_1_36_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_10_2022_5_33_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_10_2022_5_33_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_10_2022_8_18_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_10_2022_8_18_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -255,12 +258,12 @@
       <option name="project" value="LOCAL" />
       <updated>1665585419911</updated>
     </task>
-    <task id="LOCAL-00027" summary="changing dates">
-      <created>1665751635187</created>
+    <task id="LOCAL-00027" summary="drop unused columns">
+      <created>1665734434060</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1665751635187</updated>
+      <updated>1665734434060</updated>
     </task>
     <option name="localTasksCounter" value="28" />
     <servers />
@@ -318,8 +321,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="stacked_line_deaths" />
     <MESSAGE value="file update" />
-    <MESSAGE value="changing dates" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing dates" />
+    <MESSAGE value="drop unused columns" />
+    <option name="LAST_COMMIT_MESSAGE" value="drop unused columns" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
