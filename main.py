@@ -31,6 +31,7 @@ df.drop(
      'excess_mortality_cumulative', 'excess_mortality', 'excess_mortality_cumulative_per_million'],
     axis='columns', inplace=True)
 
+
 df2.drop(
     ['iso_code', 'continent', 'new_cases_smoothed', 'total_deaths', 'new_deaths_smoothed', 'total_cases_per_million',
      'new_cases_per_million', 'new_cases_smoothed_per_million', 'total_deaths_per_million',
@@ -186,26 +187,26 @@ button_trend = Button(window, text='No. of New Cases VS. No. of New Deaths in Si
                       command=trend_plot)
 button_trend.place(x=20, y=200, width=450, height=20)
 
-# Total confirmed cases in Singapore from 1st October 2021 button
-button_total = Button(window, text='Total Confirmed Cases in Singapore from 1st October 2021',
+# Total confirmed cases in Singapore from 19th August 2021 button
+button_total = Button(window, text='Total Confirmed Cases in Singapore from 19 August 2021',
                       command=cumulative_bar)
 button_total.place(x=550, y=200, width=400, height=20)
 
-# Daily Confirmed COVID19 Cases by World Region from 1 October 2021 button
-button_stacked = Button(window, text='Daily Confirmed COVID19 Cases by World Region from 1 October 2021',
+# Daily Confirmed COVID19 Cases by World Region from 19 August 2021 button
+button_stacked = Button(window, text='Daily Confirmed COVID19 Cases by World Region from 19 August 2021',
                         command=stacked_linegraph)
 button_stacked.place(x=20, y=300, width=450, height=20)
 
-# Daily Confirmed COVID19 Deaths by World Region from 1 October 2021 button
-button_stacked_death = Button(window, text='Daily Confirmed COVID19 Deaths by World Region from 1 October 2021',
+# Daily Confirmed COVID19 Deaths by World Region from 19 August 2021 button
+button_stacked_death = Button(window, text='Daily Confirmed COVID19 Deaths by World Region from 19 August 2021',
                               command=stacked_linegraph_deaths)
 button_stacked_death.place(x=550, y=300, width=400, height=20)
 
-# Vaccine impact on Covid Cases (Total) button
+# Vaccine impact on Covid Cases (Total) button from 1 October 2021
 button_total_vaccine = Button(window, text='Vaccine impact on Covid-19 Cases (Total)', command=total_lineGraph)
 button_total_vaccine.place(x=20, y=400, width=450, height=20)
 
-# Vaccine impact on Covid-19 Cases (Daily)
+# Vaccine impact on Covid-19 Cases (Daily) button from 1 October 2021
 button_daily = Button(window, text='Vaccine impact on Covid-19 Cases (Daily)', command=downward_lineGraph)
 button_daily.place(x=550, y=400, width=400, height=20)
 
