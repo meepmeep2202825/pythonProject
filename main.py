@@ -51,7 +51,7 @@ df_region = df_region.loc[df_region['Entity'].isin(continents_list)]
 def stacked_linegraph():  # Daily Confirmed COVID19 Cases by World Region from 1 October 2021
     fig = px.area(df_region, x="Day", y="Daily new confirmed cases due to COVID-19 (rolling 7-day average, "
                                         "right-aligned)",
-                  color="Entity", title='Daily Confirmed COVID19 Cases by World Region from 19 August 2021')
+                  color="Entity", title='Daily Confirmed Covid-19 Cases by World Region from 19 August 2021')
     fig.show()
 
 
@@ -67,7 +67,7 @@ df_region_deaths = df_region_deaths.loc[df_region_deaths['Entity'].isin(continen
 def stacked_linegraph_deaths():  # Daily Confirmed COVID19 Deaths by World Region from 1 October 2021
     fig = px.area(df_region_deaths, x="Day",
                   y="Daily new confirmed deaths due to COVID-19 (rolling 7-day average, right-aligned)",
-                  color="Entity", title='Daily Confirmed COVID19 Deaths by World Region from 19 August 2021')
+                  color="Entity", title='Daily Confirmed Covid-19 Deaths by World Region from 19 August 2021')
     fig.show()
 
 
@@ -95,7 +95,7 @@ def total_lineGraph():  # Vaccine impact to covid cases (Total)
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_cases'], name='Total Covid-19 cases'), secondary_y=False, )
     fig.add_trace(go.Scatter(x=df2['date'], y=df2['total_vaccinations'], name='Total vaccinations'),
                   secondary_y=True, )
-    fig.update_layout(title_text='Vaccine impact to covid cases (Total)')
+    fig.update_layout(title_text='Vaccine impact to Covid-19 cases (Total)')
     fig.update_xaxes(title_text="Date")
     fig.update_yaxes(title_text="<b>Total Covid-19 Cases</b>", secondary_y=False)
     fig.update_yaxes(title_text="<b>Total vaccinations</b>", secondary_y=True)
@@ -126,7 +126,7 @@ def index_vs_cases():
 # ADVANCED Graphical User Interface (GUI)
 window = Tk()
 window.geometry('1024x686')  # Setting the dimension for the window popup
-window.title('Covid 19 Analysis')  # Setting the title for the window popup
+window.title('Covid-19 Analysis')  # Setting the title for the window popup
 
 # Creating a canvas for the background image
 my_canvas = Canvas(window, width=1024, height=686, bg="white")
@@ -153,12 +153,12 @@ button_total = Button(window, text='Total Confirmed Cases in Singapore from 19 A
 button_total.place(x=550, y=200, width=400, height=20)
 
 # Daily Confirmed COVID19 Cases by World Region from 1 October 2021 button
-button_stacked = Button(window, text='Daily Confirmed COVID19 Cases by World Region from 19 August 2021',
+button_stacked = Button(window, text='Daily Confirmed Covid-19 Cases by World Region from 19 August 2021',
                         command=stacked_linegraph)
 button_stacked.place(x=20, y=300, width=450, height=20)
 
 # Daily Confirmed COVID19 Deaths by World Region from 1 October 2021 button
-button_stacked_death = Button(window, text='Daily Confirmed COVID19 Deaths by World Region from 19 August 2021',
+button_stacked_death = Button(window, text='Daily Confirmed Covid-19 Deaths by World Region from 19 August 2021',
                               command=stacked_linegraph_deaths)
 button_stacked_death.place(x=550, y=300, width=400, height=20)
 
@@ -172,7 +172,7 @@ button_daily.place(x=550, y=400, width=400, height=20)
 
 
 # Effect of Stringency Index on No. of New COVID19 Cases button
-button_effect = Button(window, text='Effect of Stringency Index on No. of New COVID19 Cases',
+button_effect = Button(window, text='Effect of Stringency Index on No. of New Covid-19 Cases',
                        command=index_vs_cases)
 button_effect.place(x=300, y=500, width=400, height=20)
 
