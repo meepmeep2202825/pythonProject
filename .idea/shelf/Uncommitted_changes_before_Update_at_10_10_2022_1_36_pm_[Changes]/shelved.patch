@@ -1,0 +1,147 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import numpy as np\r\nimport pandas as pd\r\nimport matplotlib.pyplot as plt\r\nimport plotly.express as px\r\n\r\n# Read excel file (Data last update: 2022-10-07)\r\ndf = pd.read_csv('owid-covid-data.csv')\r\npd.set_option('display.max_columns', None)  # display all dataframe columns\r\n\r\n# Read excel file (Data last update: 2022-10-07)\r\nvt = pd.read_excel('Covid-19 SG.xlsx')\r\nvaccineData = pd.DataFrame(vt, columns=['Date', 'Daily Confirmed', 'False Positives Found', 'Total Confirmed',\r\n                                        'Daily Discharged', 'Passed but not due to COVID', 'Total Discharged',\r\n                                        'Discharged to Isolation', 'Still Hospitalised', 'Daily Deaths',\r\n                                        'Total Deaths', 'Death from Covid', 'Daily Imported',\r\n                                        'Daily Local Transmission', 'Local cases residing in dorms',\r\n                                        'Local cases not residing in dorms', 'Intensive Care Unit (ICU)',\r\n                                        'General Wards', 'In Isolation','Total Completed Isolation',\r\n                                        'Total Hospital Discharged', 'Requires Oxygen Supplementation or Unstable',\r\n                                        'Linked community cases','Unlinked Community cases', 'Phases',\r\n                                        'Cumulative Vaccine Doses', 'Cumulative Individuals Vaccinated',\r\n                                        'Cumulative Individuals Vaccination Completed',\r\n                                        'Perc population completed at least one dose',\r\n                                        'Perc population completed vaccination', 'Sinovac vaccine doses',\r\n                                        'Cumulative individuals using Sinovac vaccine',\r\n                                        'Doses of other vaccines recognised by WHO',\r\n                                        'Cumulative individuals using other vaccines recognised by WHO',\r\n                                        'Number taken booster shots', 'Perc population taken booster shots'])\r\n\r\n# Filter date to data of past 1 year\r\ndf = df[df.date >= '2021-10-01']\r\ndf = df[df.location == 'Singapore']\r\ndf2 = pd.DataFrame(data=df, columns=['date', 'new_cases'])  # filter out columns\r\n# print(df2.head())\r\n\r\n# df2 = df2.replace(np.NAN, 0) #uncomment to print dataframe\r\n\r\n\r\ndef trend_plot():  # Trend of COVID19 CASES in Past Year (from 1 October 2021)\r\n    fig = px.line(df2, x='date', y='new_cases',\r\n                  title='Trend of COVID19 Cases in Past Year (from 1 October 2021)', markers=True)\r\n    fig.show()\r\n\r\n\r\n# print(trend_plot())  # uncomment to print graph\r\n\r\n# Read csv file (Data last update: 2022-10-05)\r\ndf_region = pd.read_csv('daily-cases-covid-region.csv')\r\npd.set_option('display.max_columns', None)\r\n\r\n# Filter date to data of past 1 year\r\ndf_region = df_region[df_region.Day >= '2021-10-01']\r\ncontinents_list = ['North America', 'South America', 'Europe', 'Africa', 'Asia excl. China', 'China', 'Oceania']\r\ndf_region = df_region.loc[df_region['Entity'].isin(continents_list)]\r\n\r\n\r\ndef stacked_linegraph():  # Daily new confirmed cases due to COVID-19\r\n    fig = px.area(df_region, x=\"Day\", y=\"Daily new confirmed cases due to COVID-19 (rolling 7-day average, \"\r\n                                        \"right-aligned)\",\r\n                  color=\"Entity\", title='Daily Confirmed COVID19 Cases by World Region from 1 October 2021')\r\n    fig.show()\r\n\r\nprint(stacked_linegraph()) # uncomment to print graph\r\n\r\n\r\ndef cummulative_barGraph():\r\n    fig = px.bar(df, x='date', y='total_cases', color='total_cases', orientation='v',\r\n                 title='Total Confirmed Cases in Singapore from 1st October 2021',\r\n                 color_discrete_sequence=px.colors.cyclical.IceFire)\r\n    fig.show()\r\n\r\n\r\n# print(cummulative_barGraph()) # uncomment to print bar graph\r\n\r\ndef downward_lineGraph():\r\n    fig = px.area()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	(revision de9ded40a26b07bf7b740df1529c63c34fc3a9af)
++++ b/main.py	(date 1665380166845)
+@@ -3,29 +3,20 @@
+ import matplotlib.pyplot as plt
+ import plotly.express as px
+ 
++import plotly.graph_objects as go
++from plotly.subplots import make_subplots
++
++covid19excel = 'Covid-19 SG.xlsx'
++owidcoviddata = 'owid-covid-data.csv'
++dailycovidregion = 'daily-cases-covid-region.csv'
++
+ # Read excel file (Data last update: 2022-10-07)
+-df = pd.read_csv('owid-covid-data.csv')
++df = pd.read_csv(owidcoviddata)
+ pd.set_option('display.max_columns', None)  # display all dataframe columns
+ 
++
+ # Read excel file (Data last update: 2022-10-07)
+-vt = pd.read_excel('Covid-19 SG.xlsx')
+-vaccineData = pd.DataFrame(vt, columns=['Date', 'Daily Confirmed', 'False Positives Found', 'Total Confirmed',
+-                                        'Daily Discharged', 'Passed but not due to COVID', 'Total Discharged',
+-                                        'Discharged to Isolation', 'Still Hospitalised', 'Daily Deaths',
+-                                        'Total Deaths', 'Death from Covid', 'Daily Imported',
+-                                        'Daily Local Transmission', 'Local cases residing in dorms',
+-                                        'Local cases not residing in dorms', 'Intensive Care Unit (ICU)',
+-                                        'General Wards', 'In Isolation','Total Completed Isolation',
+-                                        'Total Hospital Discharged', 'Requires Oxygen Supplementation or Unstable',
+-                                        'Linked community cases','Unlinked Community cases', 'Phases',
+-                                        'Cumulative Vaccine Doses', 'Cumulative Individuals Vaccinated',
+-                                        'Cumulative Individuals Vaccination Completed',
+-                                        'Perc population completed at least one dose',
+-                                        'Perc population completed vaccination', 'Sinovac vaccine doses',
+-                                        'Cumulative individuals using Sinovac vaccine',
+-                                        'Doses of other vaccines recognised by WHO',
+-                                        'Cumulative individuals using other vaccines recognised by WHO',
+-                                        'Number taken booster shots', 'Perc population taken booster shots'])
++
+ 
+ # Filter date to data of past 1 year
+ df = df[df.date >= '2021-10-01']
+@@ -34,6 +25,7 @@
+ # print(df2.head())
+ 
+ # df2 = df2.replace(np.NAN, 0) #uncomment to print dataframe
++df3 = pd.DataFrame(data=df, columns=['date', 'new_cases', 'total_vaccinated'])
+ 
+ 
+ def trend_plot():  # Trend of COVID19 CASES in Past Year (from 1 October 2021)
+@@ -60,7 +52,8 @@
+                   color="Entity", title='Daily Confirmed COVID19 Cases by World Region from 1 October 2021')
+     fig.show()
+ 
+-print(stacked_linegraph()) # uncomment to print graph
++
++# print(stacked_linegraph()) # uncomment to print graph
+ 
+ 
+ def cummulative_barGraph():
+@@ -72,5 +65,22 @@
+ 
+ # print(cummulative_barGraph()) # uncomment to print bar graph
+ 
++df
+ def downward_lineGraph():
+-    fig = px.area()
++ #   new_header = df.iloc[0]  # grab the first row for the header
++ #  df_data = df[1:] # take the data less the header row
++ #  df.columns = new_header  # set the header row as the df header
++
++    fig = make_subplots(specs=[[{"secondary_y": True}]])
++    fig.add_trace(go.scatter(x=df['date'], y=df['new_cases'], name='yaxis data'), secondary_y=False,)
++
++    fig.add_trace(go.scatter(x=df['date'], y=df['total_vaccinated'], name='yaxis2 data'), secondary_y=True,)
++    fig.update_layout(title_text='Vaccine impact to covid cases')
++    fig.update_xaxes(title_text="Date")
++    fig.update_yaxes(title_text="<b>primary</b> yaxis title", secondary_y=False)
++    fig.update_yaxes(title_text="<b>secondary</b> yaxis title", secondary_y=True)
++    fig.show()
++
++
++print(downward_lineGraph())
++   # fig = px.area(df3, x='date', y=)
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3b4fbb37-dccb-4b09-a068-fb6e13c77451\" name=\"Changes\" comment=\"add data file\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/main.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Fi1sUnkl2ZPN4KXK5UXF5enTWO\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/siahl/Desktop/Li Ling/pythonProject13/main.py&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;http.certificates&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"pythonProject\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dd6639d-0386-4614-aab3-0640eca38ca1\" name=\"Changes\" comment=\"test\" />\r\n      <created>1664960297153</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1664960297153</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"chunwei's committing\">\r\n      <created>1664961303766</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664961303766</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"chunwei's testing\">\r\n      <created>1664961711711</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664961711711</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"chunwei's testing\">\r\n      <created>1664963442939</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664963442939</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"chunwei's testing\">\r\n      <created>1664963453764</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664963453764</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"test\">\r\n      <created>1664964023740</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664964023740</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"line graph\">\r\n      <created>1665070808475</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665070808475</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"line graph\">\r\n      <created>1665070862447</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665070862447</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"line graph (updated)\">\r\n      <created>1665079784571</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665079784571</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"line graph (updated)\">\r\n      <created>1665079919826</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665079919826</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"line graph (updated)\">\r\n      <created>1665229492423</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665229492423</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"line graph (updated)\">\r\n      <created>1665229512184</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665229512184</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"stacked line graph\">\r\n      <created>1665242092599</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665242092599</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"stacked line graph\">\r\n      <created>1665242135821</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665242135821</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"stacked line graph\">\r\n      <created>1665242158750</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665242158750</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"add data file\">\r\n      <created>1665244267969</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665244267969</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"16\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"chun_wei\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"Branch\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"chun_wei\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"chunwei's committing\" />\r\n    <MESSAGE value=\"chunwei's testing\" />\r\n    <MESSAGE value=\"test\" />\r\n    <MESSAGE value=\"line graph\" />\r\n    <MESSAGE value=\"line graph (updated)\" />\r\n    <MESSAGE value=\"stacked line graph\" />\r\n    <MESSAGE value=\"add data file\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"add data file\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\r\n          <url>file://$PROJECT_DIR$/../PYProject/main.py</url>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision de9ded40a26b07bf7b740df1529c63c34fc3a9af)
++++ b/.idea/workspace.xml	(date 1665371801300)
+@@ -1,8 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="3b4fbb37-dccb-4b09-a068-fb6e13c77451" name="Changes" comment="add data file">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_10_2022_06_00_pm__Changes_.xml" afterDir="false" />
++    <list default="true" id="3b4fbb37-dccb-4b09-a068-fb6e13c77451" name="Changes" comment="Vaccine's impact on covid (1)">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+     </list>
+@@ -68,7 +67,7 @@
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="3dd6639d-0386-4614-aab3-0640eca38ca1" name="Changes" comment="test" />
++      <changelist id="3b4fbb37-dccb-4b09-a068-fb6e13c77451" name="Changes" comment="Vaccine's impact on covid (1)" />
+       <created>1664960297153</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+@@ -179,7 +178,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1665244267969</updated>
+     </task>
+-    <option name="localTasksCounter" value="16" />
++    <task id="LOCAL-00016" summary="Vaccine's impact on covid (1)">
++      <created>1665322175923</created>
++      <option name="number" value="00016" />
++      <option name="presentableId" value="LOCAL-00016" />
++      <option name="project" value="LOCAL" />
++      <updated>1665322175923</updated>
++    </task>
++    <option name="localTasksCounter" value="17" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -228,7 +234,8 @@
+     <MESSAGE value="line graph (updated)" />
+     <MESSAGE value="stacked line graph" />
+     <MESSAGE value="add data file" />
+-    <option name="LAST_COMMIT_MESSAGE" value="add data file" />
++    <MESSAGE value="Vaccine's impact on covid (1)" />
++    <option name="LAST_COMMIT_MESSAGE" value="Vaccine's impact on covid (1)" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>

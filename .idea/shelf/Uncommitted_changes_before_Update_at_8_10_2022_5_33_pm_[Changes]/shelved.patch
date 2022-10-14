@@ -1,0 +1,17 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import matplotlib\r\nimport panda\r\nimport numpy\r\n\r\nlol = \"hehe\"
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	(revision fac45609aae029e27129f861351b7fcfcb57fb35)
++++ b/main.py	(date 1665221582504)
+@@ -1,5 +1,0 @@
+-import matplotlib
+-import panda
+-import numpy
+-
+-lol = "hehe"
+\ No newline at end of file
