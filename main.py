@@ -6,7 +6,7 @@ from tkinter import *
 from PIL import ImageTk, Image
 
 
-# Read Excel file
+# Read csv file
 df = pd.read_csv('owid-covid-data.csv')
 df2 = pd.read_csv('owid-covid-data.csv')
 pd.set_option('display.max_columns', None)  # display all dataframe columns
