@@ -156,8 +156,8 @@ def index_vs_cases():
                              mode='markers + lines'), secondary_y=True, )
     fig.update_layout(title_text='Effect of Stringency Index on No. of New Covid-19 Cases')
     fig.update_xaxes(title_text="Month")
-    fig.update_yaxes(title_text="<b>primary</b> No. of New Cases", secondary_y=False)
-    fig.update_yaxes(title_text="<b>secondary</b> Stringency Index", secondary_y=True)
+    fig.update_yaxes(title_text="<b>No. of New Cases</b>", secondary_y=False)
+    fig.update_yaxes(title_text="<b>Stringency Index</b>", secondary_y=True)
 
     fig.show()
 
