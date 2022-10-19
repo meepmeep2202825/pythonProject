@@ -110,7 +110,7 @@ def stacked_linegraph_deaths():  # Daily Confirmed Covid-19 Deaths by World Regi
     fig.show()
 
 
-def cumulative_bar():  # Total Confirmed Cases in Singapore from 19 August 2011
+def cumulative_bar():  # Total Confirmed Cases in Singapore from 19 August 2021
     fig = px.bar(df, x='date', y='total_cases', color='total_cases', orientation='v',
                  title='Total Confirmed Cases in Singapore from 19 August 2021',
                  color_discrete_sequence=px.colors.cyclical.IceFire)
