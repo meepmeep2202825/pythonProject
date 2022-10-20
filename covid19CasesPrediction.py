@@ -7,11 +7,12 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 import numpy as np
 
-
 confirmedCasesData = pd.read_csv(
-    'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv')
+    'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/'
+    'time_series_covid19_confirmed_global.csv')
 LatestReportsData = pd.read_csv(
-    'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/08-25-2022.csv')
+    'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/'
+    '08-25-2022.csv')
 
 columns = confirmedCasesData.keys()  # extracting all the column names from dataset
 
@@ -27,6 +28,7 @@ for date in dates:
     worldCases.append(confirmedSum)
     singaporeCases.append(confirmedCasesData[confirmedCasesData['Country/Region'] == 'Singapore'][date].sum())
 
+
 def daily_increase_in_cases(data):
     d = []
     for i in range(len(data)):
@@ -35,6 +37,7 @@ def daily_increase_in_cases(data):
         else:
             d.append(data[i] - data[i - 1])
     return d
+
 
 def moving_average_each_day(data, window_size):
     moving_average = []
@@ -58,6 +61,7 @@ daysAfterJan22 = np.array([i for i in range(len(dates))]).reshape(-1, 1)
 worldCases = np.array(worldCases).reshape(-1, 1)
 singaporeCaseByDate = np.array(singaporeCases).reshape(-1, 1)
 
+
 def plot_predictions(x, y, pred, algo_name, color, title):
     plt.figure(figsize=(12, 8))
     plt.plot(x, y)
@@ -70,9 +74,11 @@ def plot_predictions(x, y, pred, algo_name, color, title):
     plt.yticks(size=20)
     plt.show()
 
+
 def polynomial_regression(data, title):
     X_train_confirmed, X_test_confirmed, y_train_confirmed, y_test_confirmed = train_test_split(daysAfterJan22, data,
-    test_size=0.10, shuffle=False)
+                                                                                                test_size=0.10,
+                                                                                                shuffle=False)
     poly = PolynomialFeatures(degree=3)
     poly_X_train_confirmed = poly.fit_transform(X_train_confirmed)
     poly_X_test_confirmed = poly.fit_transform(X_test_confirmed)
@@ -91,4 +97,3 @@ def polynomial_regression(data, title):
     plt.show()
 
     plot_predictions(adjustedDates, data, linear_pred, 'Polynomial Regression Predictions', 'orange', title)
-
