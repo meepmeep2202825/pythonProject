@@ -7,7 +7,7 @@ def open_ui():
     # ADVANCED Graphical User Interface (GUI)
     top = Toplevel()
     top.geometry('1024x686')
-    top.title("toplevel")
+    top.title("Covid-19 Analysis")
 
     my_canvas = Canvas(top, width=1024, height=686, bg="white")
     my_canvas.grid(row=0, column=0)
