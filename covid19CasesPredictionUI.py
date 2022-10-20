@@ -3,6 +3,7 @@ from PIL import ImageTk, Image
 import covid19CasesPrediction as cp
 import covid19CasesPredictionDataVisualisation as cpgraph
 
+
 def open_ui():
     # ADVANCED Graphical User Interface (GUI)
     top = Toplevel()
