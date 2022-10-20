@@ -4,9 +4,11 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from tkinter import *
 from PIL import ImageTk, Image
+import covid19CasesPredictionUI as prediction_ui
+import covid19TwitterSentimentAnalysis as tsa
 
 
-# Read Excel file
+# Read csv file
 df = pd.read_csv('owid-covid-data.csv')
 df2 = pd.read_csv('owid-covid-data.csv')
 pd.set_option('display.max_columns', None)  # display all dataframe columns
@@ -110,7 +112,7 @@ def stacked_linegraph_deaths():  # Daily Confirmed Covid-19 Deaths by World Regi
     fig.show()
 
 
-def cumulative_bar():  # Total Confirmed Cases in Singapore from 19 August 2011
+def cumulative_bar():  # Total Confirmed Cases in Singapore from 19 August 2021
     fig = px.bar(df, x='date', y='total_cases', color='total_cases', orientation='v',
                  title='Total Confirmed Cases in Singapore from 19 August 2021',
                  color_discrete_sequence=px.colors.cyclical.IceFire)
@@ -215,6 +217,15 @@ button_effect = Button(window, text='Effect of Stringency Index on No. of New Co
                        command=index_vs_cases)
 button_effect.place(x=300, y=500, width=400, height=20)
 
+# How will Covid-19 cases grow over the next few days? button
+button_effect = Button(window, text='How will Covid-19 cases grow over the next few days?',
+                       command=prediction_ui.open_ui)
+button_effect.place(x=20, y=600, width=400, height=20)
+
+# How is the world reacting to COVID-19 right now? button
+button_effect = Button(window, text='How is the world reacting to COVID-19 right now?',
+                       command=tsa.twitter_sentiment_analysis)
+button_effect.place(x=550, y=600, width=400, height=20)
 
 # Run the tkinter loop
 window.mainloop()
