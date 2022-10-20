@@ -29,7 +29,7 @@ def twitter_sentiment_analysis():
 
     print('Analysing Tweets...')
 
-    for tweet in tweetsData.tweets:
+    for tweet in tweetsData:
         analysis = TextBlob(tweet.text)
 
         if analysis.sentiment.polarity == 0:
